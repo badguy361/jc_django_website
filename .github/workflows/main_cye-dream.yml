@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'CYE-DREaM'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_30B024AAB4704B39AC4637BD2E5E427B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_52F1A15DAA7540B7BC4D40BD522FFDB5 }}
