@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include,re_path
+from django.conf import settings
+from django.conf.urls.static import static
 # from post.views import PostListView, PostDetailView
 
 urlpatterns = [
@@ -27,4 +29,4 @@ urlpatterns = [
     path("Service/",include("service.urls"))
     # path('post/', PostListView.as_view()),
     # path('post_<pk>', PostDetailView.as_view())
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
