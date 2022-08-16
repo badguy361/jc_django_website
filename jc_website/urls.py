@@ -29,4 +29,4 @@ urlpatterns = [
     path("Service/",include("service.urls"))
     # path('post/', PostListView.as_view()),
     # path('post_<pk>', PostDetailView.as_view())
-]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
