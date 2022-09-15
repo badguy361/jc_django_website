@@ -136,10 +136,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'statics/assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-=======
 # SMTP Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -154,4 +152,3 @@ try:
 except:
     pass
 
->>>>>>> d93821801ef111b393833d782fb5d618971d4e55
