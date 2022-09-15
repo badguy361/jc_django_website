@@ -71,7 +71,7 @@ function initMap() {
                 var feat = e.feature;
                 var num = feat.getProperty('name');
                 var img = document.getElementById('hazard');
-                img.src = `../static/assets/map_image/fakeimg${num}.jpg`;
+                img.src = `../static/assets/map_image/hz_${num}.png`;
                 console.log(img.src)
                 // 點擊時獲取滑鼠的經緯度座標
                 // var coordinate = {
@@ -106,6 +106,11 @@ function initMap() {
                 FalutLayer.loadGeoJson('fault.geojson'); //載入10格子資料(用google api載)
             }
             FalutLayer.setMap(map);
+
+            FalutLayer.setStyle({ //設定屬性
+                strokeColor: '#ff0000'
+            });
+
         } else {
             FalutLayer.setMap(null);
         }
@@ -146,3 +151,24 @@ function initMap() {
         markers = [];
     });
 }
+
+function centerHandler() {
+    /*設定置中的函式*/
+    var scrollDist = $(window).scrollTop(); /*取得捲動長度*/
+    var myTop = ($(window).height() - $("#popWindow").height()) / 2 + scrollDist;
+    /*取得垂直中央位置*/
+    var myLeft = ($(window).width() - $("#popWindow").width()) / 2;
+    /*取得水平中央位置*/
+    $("#popWindow").offset({
+        top: myTop,
+        left: myLeft
+    });
+    /*設定區塊於水平與垂直置中*/
+    $('#submit').click(function () {
+        $('#popWindow').hide();
+    });
+}
+
+centerHandler(); /*呼叫置中函式，使廣告區塊置中*/
+$(window).scroll(centerHandler); /*當網頁捲動時呼叫置中函式*/
+$(window).resize(centerHandler); /*當視窗縮放時呼叫置中函式*/

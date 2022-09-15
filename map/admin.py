@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Map_Image,MapPage
+from .models import Map_Image,MapPage,MapPage_EN,Visitor_Info
 
 # Register your models here.
 
@@ -10,4 +10,13 @@ class Map_Image_Admin(admin.ModelAdmin):
 
 @admin.register(MapPage)
 class MapPage_Admin(admin.ModelAdmin):
-    list_display = ( "name","logo","bottom_title","bottom_content","bottom_email","bottom_phone")
+    list_display = ( "name","logo","form_title","form_image","bottom_title","bottom_content","bottom_email","bottom_phone")
+
+@admin.register(MapPage_EN)
+class MapPage_EN_Admin(admin.ModelAdmin):
+    list_display = ( "name","form_title","bottom_title","bottom_content","bottom_email","bottom_phone")
+
+@admin.register(Visitor_Info)
+class Visitor_Info_Admin(admin.ModelAdmin):
+    list_display = ( "name","email","job_title","create_time")
+    ordering = ("id",)
