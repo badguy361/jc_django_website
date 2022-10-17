@@ -33,13 +33,13 @@
                         <a class="nav-link active" aria-current="page" href="..">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../MapPage">地圖</a>
+                        <a class="nav-link" href="">技術服務</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">服務</a>
+                        <a class="nav-link" href="../Experience">專案事蹟</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Experience">經歷</a>
+                        <a class="nav-link" href="../MapPage">危害度地圖</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../AboutUs">關於我們</a>
@@ -68,7 +68,7 @@
                         <img src="../static/assets/{{ service.pic_url }}" class="img-fluid" style="width:100%">
                     </div>
                     <div class="col-12 col-md-7 mt-4">
-                        <h3 style="width:100%;font-size:200%;">{{service.title}}</h3>
+                        <h3 style="width:100%;font-size:200%;" id="{{ service.id }}">{{service.title}}</h3>
                         <p style="width:100%;line-height: 2;">{{service.content}}</p>
                         <br>
                         <br>
