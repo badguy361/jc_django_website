@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(0huu$7g10xk1@$vfdkf@yxy(a6e%$dy+fks#t9n7fnlmb024i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.0.100','*']
-CSRF_TRUSTED_ORIGINS = ["https://cye-dream.azurewebsites.net"]
+CSRF_TRUSTED_ORIGINS = ["https://cye-dream.azurewebsites.net","https://www.cye-dream.com"]
 
 # Application definition
 
@@ -127,18 +127,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"statics"),
-]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'statics/assets')
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+STATIC_URL = '/statics/'
+MEDIA_URL = '/media/'
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'statics')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 # SMTP Configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
